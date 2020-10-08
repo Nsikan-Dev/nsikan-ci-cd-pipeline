@@ -56,7 +56,7 @@ def predict():
 
     try:
         clf = joblib.load("boston_housing_prediction.joblib")
-    except Exception:
+    except FileNotFoundError:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
 
