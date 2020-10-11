@@ -28,9 +28,26 @@ When the updated code has been merged into the repository, the change event from
 
 ### Running this project
 
-In Azure Portal, launch Azure Cloud Shell. From the command prompt, clone this repository
+In Azure Portal, launch Azure Cloud Shell. From the command prompt, clone this repository using the command:
 
-`git clone https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline.git`
+`git clone git@github.com:Nsikan-Dev/nsikan-ci-cd-pipeline.git`
+
+You should have SSH keys enabled in your GitHub account for this to work.
+
+Next, create a virtual environment in your root directory,
+
+`python3 -m venv ~/.nsikan-ci-cd`
+
+activate the virtual environment,
+
+`source ~/.nsikan-ci-cd/bin/activate`
+
+then cd into the project directory
+
+`cd nsikan-ci-cd-pipeline`
+
+Note that we create the virtual environment outside of the projrct directory to prevent it from being mistakenly pushed to the repository.
+
 
 * Project running on Azure App Service
 
