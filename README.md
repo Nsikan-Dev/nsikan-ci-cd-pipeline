@@ -1,12 +1,11 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project demonstrates the setup and implementation of a CI/CD pipeline for a sample FLask Machine Learning application. After installation, a user should be able to see the continuous integration of updates to a repository with checks, and the deployment of the updates to a deployed website.
 
 ## Project Plan
-<TODO: Project Plan
-
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+Links to the Project Plans are listed below. The project plans show a very high-level description of work done, because this is a relatively simple project.
+* [Trello board](https://trello.com/b/cMsRJ25q/build-ci-cd-pipeline)
+* [Google Sheets](https://docs.google.com/spreadsheets/d/1zsZ4W2GNF-WPjgAXUryizli8ggC4jflC1hApE9sZ5U4/edit#gid=1348135932)
 
 ## Instructions
 
