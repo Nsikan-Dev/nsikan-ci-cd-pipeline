@@ -67,7 +67,11 @@ Click on the app service, and it should take you to a page with more information
 ![azApp2](webAppInAzure2.png)
 
 Verify that the application works at the deployed URL (in this example, https://nsikan-ci-cd.azurewebsites.net/)
+
 ![site](liveSite.png)
+
+Check the logs as well:
+
 
 Make a prediction by running the command `./make_predict_azure_app.sh` in Azure Cloud Shell. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
 
@@ -93,20 +97,20 @@ Step 2: Set up a new service connection
 - Click on Project Settings -> Pipelines -> Service Connections -> New Service Connection
 - In the dialog box that pops up, select Azure Resource Manager, then click Next
 - In the next dialog box, under Scope, select Subscription, then Select your Subscription and Resource Group that contain the app service with your deployed app
-- Name the service connection and select "Grant access permission to all pipelines"
+- Name the service connection and select "Grant access permission to all pipelines", then click Save
+
+Step 3: Create pipeline
+- Select Pipeline -> Create Pipeline
+- Select "GitHub YAML" to enable integration with GitHub
+- Select "Python to Linux Web App on Azure" as your pipeline configuration
+- Click "Validate and Configure"
+- This should generate a yml file (azure-pipelines.yml), which you commit to your git repository.
+
+Test:
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
 * Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
 
 * Output of streamed log files from deployed application
 
@@ -114,10 +118,10 @@ Port: 443
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+To further improve this project, we might want to experiment with scheduled builds and deployments.
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+
 
 
