@@ -127,6 +127,8 @@ To further improve this project, we might want to experiment with scheduled buil
 
 ## Demo 
 
+A short demo of the CI/CD pipeline can be viewed [here](https://youtu.be/gC7QuL_rCPo)
+
 
 
 
