@@ -58,20 +58,29 @@ Create an app service and deploy your app. You can replace `nsikan-ci-cd` with a
 
 `az webapp up -n nsikan-ci-cd`
 
-You can check for the deployed app in Azure Portal.
+You can check for the deployed app in Azure Portal running on App Service.
+
+![azApp](webAppInAzure.png)
+
+![azApp2](webAppInAzure2.png)
 
 Verify that the application works at the deployed URL (in this example, https://nsikan-ci-cd.azurewebsites.net/)
-
+![site](liveSite.png)
 
 Make a prediction by running the command `./make_predict_azure_app.sh`. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
 
 `-X POST https://<yourappname>.azurewebsites.net:$PORT/predict`
 
-* Project running on Azure App Service
+You should get the ouput below:
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+```
+(.nsikan-ci-cd) nsikan@Azure:~/nsikan-ci-cd-pipeline$ ./make_predict_azure_app.sh
+Port: 443
+{"prediction":[20.35373177134412]}
+```
 
-* Output of a test run
+### Setting up Azure Pipelines
+As you follow the steps below, please double-check with [official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops)
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
