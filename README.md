@@ -8,10 +8,10 @@ Links to the Project Plans are listed below. The project plans show a very high-
 * [Google Sheets](https://docs.google.com/spreadsheets/d/1zsZ4W2GNF-WPjgAXUryizli8ggC4jflC1hApE9sZ5U4/edit#gid=1348135932)
 
 ## Instructions
-
-<TODO:  
+ 
 ### Architecture
 There are two aspects to this project, described below (images from Udacity):
+
 - Continuous Integration
 
 The architecture described below enables continuous integration of updated code into thte repository. When new code is checked into the repository, GitHub Actions builds the updated code and runs predefined checks (lint, etc.) before the updated code can be merged into the repository.
@@ -25,6 +25,12 @@ When the updated code has been merged into the repository, the change event from
 ![CD](CD_Architecture.png)
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+
+### Running this project
+
+In Azure Portal, launch Azure Cloud Shell. From the command prompt, clone this repository
+
+`git clone https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline.git`
 
 * Project running on Azure App Service
 
