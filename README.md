@@ -46,14 +46,26 @@ then cd into the project directory
 
 `cd nsikan-ci-cd-pipeline`
 
-Note that we create the virtual environment outside of the projrct directory to prevent it from being mistakenly pushed to the repository. If you type the command `ls` at the prompt, you should get at least the following files:
+Note that we create the virtual environment outside of the project directory to prevent it from being mistakenly pushed to the repository. If you type the command `ls` at the prompt, you should get at least the following files:
 
 ![Cloned](Cloned_repo.png)
 
+Run `make install`. You should get the output below indicating that tests have been run and passed.
+
+
+
+Create an app service and deploy your app. You can replace `nsikan-ci-cd` with a name of your choice when you run the command:
+
+`az webapp up -n nsikan-ci-cd`
+
+Verify that the application works at the deployed URL (in this example, https://nsikan-ci-cd.azurewebsites.net/)
+
+
+Make a prediction by running the command `./make_predict_azure_app.sh`. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
+
+`-X POST https://<yourappname>.azurewebsites.net:$PORT/predict`
 
 * Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
