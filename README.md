@@ -1,6 +1,6 @@
 # Overview
 
-This project demonstrates the setup and implementation of a CI/CD pipeline for a sample FLask Machine Learning application. After installation, a user should be able to see the continuous integration of updates to a repository with checks, and the deployment of the updates to a deployed website.
+This project demonstrates the setup and implementation of a CI/CD pipeline for a sample FLask Machine Learning application. After installation, a user should be able to see the continuous integration of updates to a repository with checks, and the deployment of the updates to a deployed website via Azure App Service.
 
 ## Project Plan
 Links to the Project Plans are listed below. The project plans show a very high-level description of work done, because this is a relatively simple project.
@@ -20,13 +20,15 @@ The architecture described below enables continuous integration of updated code 
 
 - Continuous Deployment
 
-When the updated code has been merged into the repository, the change event from GitHub triggers Azure Pipelines to deploy the app with the updates.
+When the updated code has been merged into the repository, the change event from GitHub triggers Azure Pipelines to deploy the updates to Azure App Service. The updates can then be seen in the deplyed Flask API
 
 ![CD](CD_Architecture.png)
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 ### Running this project
+
+**Step 1: Clone repository and set up run**
 
 In Azure Portal, launch Azure Cloud Shell. From the command prompt, clone this repository using the command:
 
@@ -54,6 +56,8 @@ Run `make install`. You should get the output below indicating that tests have b
 
 ![makeAll](Make_all_outputs.png)
 
+**Step 2: Deploy the app**
+
 Create an app service and deploy your app. You can replace `nsikan-ci-cd` with a name of your choice when you run the command:
 
 `az webapp up -n nsikan-ci-cd`
@@ -72,6 +76,9 @@ Verify that the application works at the deployed URL (in this example, https://
 
 Check the logs as well:
 
+![logs](app_service_log.png)
+
+**Test the app:**
 
 Make a prediction by running the command `./make_predict_azure_app.sh` in Azure Cloud Shell. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
 
@@ -88,33 +95,31 @@ Port: 443
 ### Setting up Azure Pipelines
 As you follow the steps below, please double-check with [official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops). You will need to log into [Azure DevOps](https://dev.azure.com/) to complete these steps.
 
-Step 1: Create a new project and name it
+**Step 1: Create a new project and name it**
 - Click on "Create New Project"
 - In the dialog box that pops up, give your project a name and set its visibility to public
 - Click Create
 
-Step 2: Set up a new service connection
+**Step 2: Set up a new service connection**
 - Click on Project Settings -> Pipelines -> Service Connections -> New Service Connection
 - In the dialog box that pops up, select Azure Resource Manager, then click Next
 - In the next dialog box, under Scope, select Subscription, then Select your Subscription and Resource Group that contain the app service with your deployed app
 - Name the service connection and select "Grant access permission to all pipelines", then click Save
 
-Step 3: Create pipeline
+**Step 3: Create pipeline**
 - Select Pipeline -> Create Pipeline
 - Select "GitHub YAML" to enable integration with GitHub
 - Select "Python to Linux Web App on Azure" as your pipeline configuration
 - Click "Validate and Configure"
 - This should generate a yml file (azure-pipelines.yml), which you commit to your git repository.
 
-Test:
+**Test:**
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+If you click on Pipelines, you should see your newly created pipeline. Click on it, and you should be able to run it by clicking "Run pipeline". To see it run automatically, triggered by a GitHub update, and see the updates deployed to app service, try replicating the steps in the demo in the "Demo" section.
+
+![pipeline](az_pipeline.png)
 
 * Running Azure App Service from Azure Pipelines automatic deployment
-
-* Output of streamed log files from deployed application
-
-> 
 
 ## Enhancements
 
