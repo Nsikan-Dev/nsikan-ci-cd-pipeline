@@ -46,7 +46,9 @@ then cd into the project directory
 
 `cd nsikan-ci-cd-pipeline`
 
-Note that we create the virtual environment outside of the projrct directory to prevent it from being mistakenly pushed to the repository.
+Note that we create the virtual environment outside of the projrct directory to prevent it from being mistakenly pushed to the repository. If you type the command `ls` at the prompt, you should get at least the following files:
+
+![Cloned](Cloned_repo.png)
 
 
 * Project running on Azure App Service
