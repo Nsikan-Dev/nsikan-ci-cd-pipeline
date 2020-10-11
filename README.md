@@ -52,11 +52,13 @@ Note that we create the virtual environment outside of the project directory to 
 
 Run `make install`. You should get the output below indicating that tests have been run and passed.
 
-
+![makeAll](Make_all_outputs.png)
 
 Create an app service and deploy your app. You can replace `nsikan-ci-cd` with a name of your choice when you run the command:
 
 `az webapp up -n nsikan-ci-cd`
+
+You can check for the deployed app in Azure Portal.
 
 Verify that the application works at the deployed URL (in this example, https://nsikan-ci-cd.azurewebsites.net/)
 
