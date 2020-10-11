@@ -10,7 +10,14 @@ Links to the Project Plans are listed below. The project plans show a very high-
 ## Instructions
 
 <TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+### Architecture
+There are two aspects to this project:
+- Continuous Integration
+The architecture described below enables continuous integration of updated code into thte repository. When new code is checked into the repository, GitHub Actions builds the updated code and runs predefined checks (lint, etc.) before the updated code can be merged into the repository.
+
+
+- Continuous Deployment
+When the updated code has been merged into the repository, Azure Pipelines deploys the app with the updates.
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
