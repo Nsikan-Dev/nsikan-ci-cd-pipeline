@@ -62,12 +62,14 @@ You can check for the deployed app in Azure Portal running on App Service.
 
 ![azApp](webAppInAzure.png)
 
+Click on the app service, and it should take you to a page with more information about your deployed app
+
 ![azApp2](webAppInAzure2.png)
 
 Verify that the application works at the deployed URL (in this example, https://nsikan-ci-cd.azurewebsites.net/)
 ![site](liveSite.png)
 
-Make a prediction by running the command `./make_predict_azure_app.sh`. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
+Make a prediction by running the command `./make_predict_azure_app.sh` in Azure Cloud Shell. If you deployed the app with a name other than nsikan-ci-cd, then update the line below in the file make_predict_azure_app.sh before running this command:
 
 `-X POST https://<yourappname>.azurewebsites.net:$PORT/predict`
 
@@ -80,7 +82,18 @@ Port: 443
 ```
 
 ### Setting up Azure Pipelines
-As you follow the steps below, please double-check with [official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops)
+As you follow the steps below, please double-check with [official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops). You will need to log into [Azure DevOps](https://dev.azure.com/) to complete these steps.
+
+Step 1: Create a new project and name it
+- Click on "Create New Project"
+- In the dialog box that pops up, give your project a name and set its visibility to public
+- Click Create
+
+Step 2: Set up a new service connection
+- Click on Project Settings -> Pipelines -> Service Connections -> New Service Connection
+- In the dialog box that pops up, select Azure Resource Manager, then click Next
+- In the next dialog box, under Scope, select Subscription, then Select your Subscription and Resource Group that contain the app service with your deployed app
+- Name the service connection and select "Grant access permission to all pipelines"
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
