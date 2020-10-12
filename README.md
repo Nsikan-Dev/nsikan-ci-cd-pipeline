@@ -131,4 +131,4 @@ A short demo of the CI/CD pipeline can be viewed [here](https://youtu.be/gC7QuL_
 
 
 
-
+[![Actions Status](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/workflows/Python%20application%20test%20with%20GitHub%20Actions/badge.svg)](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/actions)
