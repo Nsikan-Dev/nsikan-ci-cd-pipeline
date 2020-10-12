@@ -123,7 +123,7 @@ If you click on Pipelines, you should see your newly created pipeline. Click on 
 
 ## Enhancements
 
-To further improve this project, we might want to experiment with scheduled builds and deployments.
+To further improve this project, we might want to experiment with scheduled builds and deployments. I would also extend the continuous integration checks to check markdown files for formatting and other issues like incorrect links to websites. I would also experiment with customized formatting rules for lint checks. Lastly, I would create more unit tests for the application.
 
 ## Demo 
 
