@@ -130,5 +130,8 @@ To further improve this project, we might want to experiment with scheduled buil
 A short demo of the CI/CD pipeline can be viewed [here](https://youtu.be/gC7QuL_rCPo)
 
 
+## Miscellaneous
 
-[![Actions Status](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/workflows/Python%20application%20test%20with%20GitHub%20Actions/badge.svg)](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/actions)
+Git Actions Status Badge:
+
+[![Actions Status](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/actions)
