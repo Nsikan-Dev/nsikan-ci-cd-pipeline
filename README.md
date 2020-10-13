@@ -135,3 +135,17 @@ A short demo of the CI/CD pipeline can be viewed [here](https://youtu.be/gC7QuL_
 Git Actions Status Badge:
 
 [![Actions Status](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/Nsikan-Dev/nsikan-ci-cd-pipeline/actions)
+
+## Load testing using locust
+
+The file `locustfile.py` can be used to simulate load testing on the deployed site. To run the load test locally, you will need to install Python version 3.6 or more. Then:
+* install locust using the command `pip3 install locust`
+* run the load test using the command `locust -f locustfile.py`
+* navigate to (http://localhost:8089/); you should see the page shown below:
+
+![locustStart](locust_start.png)
+
+* enter values for total users and spawn rate, then click "Start Swarming". You should see the performance summary below, and will update continuously, as the tests run:
+
+![locustSummary](locust_summary.png)
+
