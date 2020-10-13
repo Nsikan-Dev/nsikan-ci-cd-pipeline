@@ -145,7 +145,7 @@ The file `locustfile.py` can be used to simulate load testing on the deployed si
 
 ![locustStart](locust_start.png)
 
-* enter values for total users and spawn rate, then click "Start Swarming". You should see the performance summary below, and will update continuously, as the tests run:
+* enter values for total users and spawn rate, then click "Start Swarming". You should see the performance summary below, and it will update continuously, as the tests run:
 
 ![locustSummary](locust_summary.png)
 
